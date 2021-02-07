@@ -1,0 +1,27 @@
+{% extends "base_site.html" %}
+
+{% block title %} Dashboard {% endblock title %}
+
+{% block stylesheets %}
+  {{ super() }}
+{% endblock stylesheets %}
+
+{% block content %}
+
+  {% include "site_template/navigation.html" %}
+
+  {% include "site_template/top-stats.html" %}
+
+        <iframe src = "{{ url_for('loadChart',path = barpath) }}" height = 400 width = 600></iframe>
+        <iframe src = "{{ url_for('loadMap',path = path) }}" height = 400 width = 600></iframe>
+
+
+
+    {% include "site_template/footer.html" %}
+
+
+{% endblock content %}
+
+{% block javascripts %}
+  {{ super()}}
+{% endblock javascripts %}

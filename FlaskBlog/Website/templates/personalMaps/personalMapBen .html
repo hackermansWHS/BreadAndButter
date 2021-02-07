@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_257bcf92bb62409e8a1b9fe3af4a9966 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_257bcf92bb62409e8a1b9fe3af4a9966" ></div>
+        
+</body>
+<script>    
+    
+            var map_257bcf92bb62409e8a1b9fe3af4a9966 = L.map(
+                "map_257bcf92bb62409e8a1b9fe3af4a9966",
+                {
+                    center: [37.5608093, -121.9570902],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cf7ccde3730a4a46ac9f1ccd3f8cd1a3 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_257bcf92bb62409e8a1b9fe3af4a9966);
+        
+    
+            var marker_b01479add91c47ad8ea6144f026deda1 = L.marker(
+                [37.5608093, -121.9570902],
+                {}
+            ).addTo(map_257bcf92bb62409e8a1b9fe3af4a9966);
+        
+    
+            var icon_2626d08b2f8045bd8d5e85ec4f8ca198 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b01479add91c47ad8ea6144f026deda1.setIcon(icon_2626d08b2f8045bd8d5e85ec4f8ca198);
+        
+    
+        var popup_0af1d6b7832e40aa8d7c9b59b2c65e92 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dfc22438fb964f819a7fe846a0788ac2 = $(`<div id="html_dfc22438fb964f819a7fe846a0788ac2" style="width: 100.0%; height: 100.0%;">Home</div>`)[0];
+            popup_0af1d6b7832e40aa8d7c9b59b2c65e92.setContent(html_dfc22438fb964f819a7fe846a0788ac2);
+        
+
+        marker_b01479add91c47ad8ea6144f026deda1.bindPopup(popup_0af1d6b7832e40aa8d7c9b59b2c65e92)
+        ;
+
+        
+    
+    
+            var marker_c03df7b4bbfe4f1a81fabd6e40575b4a = L.marker(
+                [37.55336735, -121.99381504909599],
+                {}
+            ).addTo(map_257bcf92bb62409e8a1b9fe3af4a9966);
+        
+    
+        var popup_31169feec1f4445391fbe1c2012440e9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_33af6642b937492eb10a90d9833e5bae = $(`<div id="html_33af6642b937492eb10a90d9833e5bae" style="width: 100.0%; height: 100.0%;">Washington High School March for BLM!</div>`)[0];
+            popup_31169feec1f4445391fbe1c2012440e9.setContent(html_33af6642b937492eb10a90d9833e5bae);
+        
+
+        marker_c03df7b4bbfe4f1a81fabd6e40575b4a.bindPopup(popup_31169feec1f4445391fbe1c2012440e9)
+        ;
+
+        
+    
+    
+            var marker_0e18e0e1e0bc46b4b7a193b1111f311b = L.marker(
+                [37.5266713, -121.9844997],
+                {}
+            ).addTo(map_257bcf92bb62409e8a1b9fe3af4a9966);
+        
+    
+        var popup_63e8f8427ff44e1c9ab422573bef9575 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8ab6f6a530be49c498451b06876d0c83 = $(`<div id="html_8ab6f6a530be49c498451b06876d0c83" style="width: 100.0%; height: 100.0%;">Marching for Police Reform</div>`)[0];
+            popup_63e8f8427ff44e1c9ab422573bef9575.setContent(html_8ab6f6a530be49c498451b06876d0c83);
+        
+
+        marker_0e18e0e1e0bc46b4b7a193b1111f311b.bindPopup(popup_63e8f8427ff44e1c9ab422573bef9575)
+        ;
+
+        
+    
+    
+            var marker_aad260641abf4c9593e9296f13d55664 = L.marker(
+                [37.5474477, -121.9859187],
+                {}
+            ).addTo(map_257bcf92bb62409e8a1b9fe3af4a9966);
+        
+    
+        var popup_d441619b4e564b26850c56117ab545c7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d72ca739226d46e388ad59cd7d4baff9 = $(`<div id="html_d72ca739226d46e388ad59cd7d4baff9" style="width: 100.0%; height: 100.0%;">Come to Chipotle with Me!</div>`)[0];
+            popup_d441619b4e564b26850c56117ab545c7.setContent(html_d72ca739226d46e388ad59cd7d4baff9);
+        
+
+        marker_aad260641abf4c9593e9296f13d55664.bindPopup(popup_d441619b4e564b26850c56117ab545c7)
+        ;
+
+        
+    
+    
+            var marker_257188b580c446b991885f388f0d0776 = L.marker(
+                [37.565347, -122.01648350597601],
+                {}
+            ).addTo(map_257bcf92bb62409e8a1b9fe3af4a9966);
+        
+    
+        var popup_378d4b36dd654b4d914be129fd6381f8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0cfe0c1213cd43bfb92f7a165a2ec581 = $(`<div id="html_0cfe0c1213cd43bfb92f7a165a2ec581" style="width: 100.0%; height: 100.0%;">Marching for Transgender Rights and Equal Pay</div>`)[0];
+            popup_378d4b36dd654b4d914be129fd6381f8.setContent(html_0cfe0c1213cd43bfb92f7a165a2ec581);
+        
+
+        marker_257188b580c446b991885f388f0d0776.bindPopup(popup_378d4b36dd654b4d914be129fd6381f8)
+        ;
+
+        
+    
+</script>

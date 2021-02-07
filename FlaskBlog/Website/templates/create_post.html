@@ -1,0 +1,81 @@
+{% extends "base_site.html" %}
+{%block complete%}
+<script src='http://maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=places&key=AIzaSyBp02CU-o7IfG-9b7Nylfz18mq279AFEKE'></script>
+
+<script src="{{url_for('static', filename = 'jquery.geocomplete.js')}}"></script>
+{% endblock complete%}
+{%block js%}
+$("#location").geocomplete({
+    map:"#map"
+});
+{% endblock js%}
+{%block stylesheets%}
+{{super()}}
+<link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+{% endblock stylesheets%}
+{%block content%}
+<div class = "container col-md-10" >
+    <div class="content-section">
+<div class = "card-body">
+        <form method = 'POST' action = '' >
+            {{form.hidden_tag()}}
+            <fieldset class = 'form-group col-md-6'>
+                <h2>{{legend}}</h2>
+                <hr class = "">
+                <div class = "form-group col-md-12">
+                    {{form.title.label(class = 'form-control-label')}}
+                    {% if form.title.errors %}
+                        {{form.title(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.title.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.title(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div>
+                <div class = "form-group col-md-12">
+                    {{form.location.label(class = 'form-control-label')}}
+                    {% if form.location.errors %}
+                        {{form.location(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.location.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.location(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div>
+                <div class = "form-group col-md-12">
+                    {{form.content.label(class = 'form-control-label')}}
+                    {% if form.content.errors %}
+                        {{form.content(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.content.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.content(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div>
+                                <div class = "form-group col">
+                    {{ form.submit(class = 'btn btn-outline-info') }}
+                </div>
+            </fieldset>
+            <div id = "map">
+
+    </div>
+        </form>
+    </div>
+    </div>
+    </div>
+{% endblock content%}

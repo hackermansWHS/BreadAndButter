@@ -1,0 +1,208 @@
+{% extends "layout.html" %}
+{%block content%}
+<div class = "container">
+    <div class = 'content-section'>
+        <form method = 'POST' action = '' >
+            {{form.hidden_tag()}}
+            <fieldset class = 'form-group'>
+                <h1>{{ legend }}</h1>
+                <hr>
+                <div class = "row">
+                <div class = "form-group col-md-6">
+                    {{form.org.label(class = "form-control-label")}}
+
+                    {% if form.org.errors %}
+                        {{form.org(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.org.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.org(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div>
+                <div class = "form-group col-md-6">
+                    {{form.percentage.label(class = "form-control-label")}}
+
+                    {% if form.percentage.errors %}
+                        {{form.percentage(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.percentage.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.percentage(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div>
+                </div>
+                <div class = "row">
+                <div class = "form-group col-md-6">
+                    {{form.item1.label(class = "form-control-label")}}
+
+                    {% if form.item1.errors %}
+                        {{form.item1(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.item1.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.item1(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div>
+                <div class = "form-group col-md-6">
+                    {{form.price1.label(class = "form-control-label")}}
+
+                    {% if form.price1.errors %}
+                        {{form.price1(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.price1.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.price1(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div></div>
+                <div class = "row">
+                <div class = "form-group col-md-6">
+                    {{form.item2.label(class = 'form-control-label')}}
+                    {% if form.item2.errors %}
+                        {{form.item2(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.item2.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.item2(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div>
+                <div class = "form-group col-md-6">
+                    {{form.price2.label(class = 'form-control-label')}}
+                    {% if form.price2.errors %}
+                        {{form.price2(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.price2.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.price2(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div></div>
+                <div class = "row">
+                <div class = "form-group col-md-6">
+                    {{form.item3.label(class = 'form-control-label')}}
+                    {% if form.item3.errors %}
+                        {{form.item3(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.item3.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.item3(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div>
+                <div class = "form-group col-md-6">
+                    {{form.price3.label(class = 'form-control-label')}}
+                    {% if form.price3.errors %}
+                        {{form.price3(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.price3.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.price3(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div></div>
+                <div class = "row">
+                <div class = "form-group col-md-6">
+                    {{form.item4.label(class = 'form-control-label')}}
+                    {% if form.item4.errors %}
+                        {{form.item4(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.item4.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.item4(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div>
+                <div class = "form-group col-md-6">
+                    {{form.price4.label(class = 'form-control-label')}}
+                    {% if form.price4.errors %}
+                        {{form.price4(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.price4.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.price4(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div></div>
+                <div class = "row">
+                <div class = "form-group col-md-6">
+                    {{form.item5.label(class = 'form-control-label')}}
+                    {% if form.item5.errors %}
+                        {{form.item5(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.item5.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.item5(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div>
+                <div class = "form-group col-md-6">
+                    {{form.price5.label(class = 'form-control-label')}}
+                    {% if form.price5.errors %}
+                        {{form.price5(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.price5.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.price5(class = "form-control form-control-lg")}}
+                    {%endif%}
+                </div></div>
+            </fieldset>
+                <div class = "form-group">
+                    {{ form.submit(class = 'btn btn-outline-info') }}
+                </div>
+        </form>
+    </div>
+    </div>
+{% endblock content%}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_374b773c99814bc99c435d761181b0c8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_374b773c99814bc99c435d761181b0c8" ></div>
+        
+</body>
+<script>    
+    
+            var map_374b773c99814bc99c435d761181b0c8 = L.map(
+                "map_374b773c99814bc99c435d761181b0c8",
+                {
+                    center: [37.57503, -122.040867],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e363d5d273cb4488923deca7c83327bf = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_374b773c99814bc99c435d761181b0c8);
+        
+    
+            var marker_d87f8176beb94de996033884983eed6f = L.marker(
+                [37.57503, -122.040867],
+                {}
+            ).addTo(map_374b773c99814bc99c435d761181b0c8);
+        
+    
+            var icon_3e94cd4865134b7e82220a8c37e89123 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d87f8176beb94de996033884983eed6f.setIcon(icon_3e94cd4865134b7e82220a8c37e89123);
+        
+    
+        var popup_14b726c451824777b580900de10febe5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5e50b27bf9bd430aac71442b564a841a = $(`<div id="html_5e50b27bf9bd430aac71442b564a841a" style="width: 100.0%; height: 100.0%;">Home</div>`)[0];
+            popup_14b726c451824777b580900de10febe5.setContent(html_5e50b27bf9bd430aac71442b564a841a);
+        
+
+        marker_d87f8176beb94de996033884983eed6f.bindPopup(popup_14b726c451824777b580900de10febe5)
+        ;
+
+        
+    
+</script>

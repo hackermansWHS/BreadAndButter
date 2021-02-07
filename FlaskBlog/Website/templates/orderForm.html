@@ -1,0 +1,175 @@
+{% extends "base_site.html" %}
+{%block stripe%}
+const checkout_public_key = '{{checkout_public_key}}'
+const checkout_session_id = '{{checkout_session_id}}'
+{%endblock stripe%}
+{%block stylesheets%}
+{{super()}}
+<link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+{% endblock stylesheets%}
+{%block complete%}
+
+<script src='http://maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=places&key=AIzaSyBp02CU-o7IfG-9b7Nylfz18mq279AFEKE'></script>
+<script src="{{url_for('static', filename = 'jquery.geocomplete.js')}}"></script>
+{% endblock complete%}
+{%block js%}
+$(function(){
+$("#userAddress").geocomplete()
+});
+{% endblock js%}
+{%block content%}
+<div class = "container">
+    <div class = 'content-section'>
+        <form method = 'POST' action = '' >
+            {{form.hidden_tag()}}
+            <fieldset class = 'form-group text-center'>
+                <h1> New Order</h1>
+                <hr>
+                <h1>{{menu.percentage}}% of this order Supports {{menu.org}}</h1>
+                <div class = "row">
+                    <div class = "form-group col-md-6">
+                        {{form.username.label(class = "form-control-label font-weight-bold")}}
+
+                    {% if form.username.errors %}
+                        {{form.username(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.username.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.username(class = "form-control form-control-lg")}}
+                    {%endif%}
+                    </div>
+                <div class = "form-group col-md-6">
+                        {{form.userAddress.label(class = "form-control-label font-weight-bold")}}
+
+                    {% if form.userAddress.errors %}
+                        {{form.userAddress(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.userAddress.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.userAddress(class = "form-control form-control-lg")}}
+                    {%endif%}
+                    </div></div>
+                <div class = "row">
+                    <h2 class = "col-md-4 text-left">Item</h2>
+                    <h2 class = "col-md-4 text-left">Price</h2>
+                    <h2 class = "col-md-2 text-left">Quantity</h2>
+                </div>
+                <div class = "row">
+                    <h4 class = "col-md-4 text-left">{{menu.item1}}</h4>
+                    <h4 class = "col-md-4 text-left">{{menu.price1}}</h4>
+                <div class = "col-md-2">
+                    {% if form.qty1.errors %}
+                        {{form.qty1(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.qty1.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.qty1(class = "form-control form-control")}}
+                    <br>
+                    {%endif%}
+                </div></div>
+
+                <div class = "row">
+                <div class = "col-md-4 text-left font-weight-bold">
+                    <h4> {{menu.item2}} </h4>
+                </div>
+                    <h4 class = "col-md-4 text-left"> {{menu.price2}} </h4>
+                <div class = "col-md-2">
+                    {% if form.qty2.errors %}
+                        {{form.qty2(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.qty2.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.qty2(class = "form-control form-control")}}
+                    <br>
+                    {%endif%}
+                </div></div>
+
+                <div class = "row">
+                    <h4 class = "col-md-4 text-left"> {{menu.item3}} </h4>
+                    <h4 class = "col-md-4 text-left"> {{menu.price3}} </h4>
+                <div class = "col-md-2">
+                    {% if form.qty3.errors %}
+                        {{form.qty3(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.qty3.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.qty3(class = "form-control form-control")}}
+                    <br>
+                    {%endif%}
+                </div></div>
+                <div class = "row">
+               <div class = "col-md-4 text-left">
+                    <h4> {{menu.item4}} </h4>
+                </div>
+                 <div class = "col-md-4 text-left">
+                    <h4> {{menu.price4}} </h4>
+                </div>
+                <div class = "col-md-2">
+                    {% if form.qty4.errors %}
+                        {{form.qty4(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.qty4.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.qty4(class = "form-control form-control")}}
+                    <br>
+                    {%endif%}
+                </div></div>
+                <div class = "row">
+               <div class = "col-md-4 text-left">
+                    <h4> {{menu.item5}} </h4>
+                </div>
+                 <div class = "col-md-4 text-left">
+                    <h4> {{menu.price5}} </h4>
+                </div>
+                <div class = "col-md-2">
+                    {% if form.qty5.errors %}
+                        {{form.qty5(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.qty5.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.qty5(class = "form-control form-control")}}
+                    {%endif%}
+                </div></div>
+            </fieldset>
+            <div class = "form-group">
+                    {{ form.submit(class = 'btn btn-outline-info') }}
+                </div>
+        </form>
+    </div>
+</div>
+{% endblock content%}

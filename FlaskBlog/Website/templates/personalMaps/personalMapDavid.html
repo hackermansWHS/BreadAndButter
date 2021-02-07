@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_16085bc4660b43f1b53938ad82f6df1f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_16085bc4660b43f1b53938ad82f6df1f" ></div>
+        
+</body>
+<script>    
+    
+            var map_16085bc4660b43f1b53938ad82f6df1f = L.map(
+                "map_16085bc4660b43f1b53938ad82f6df1f",
+                {
+                    center: [37.553208412726455, -122.02699049892063],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_04a2a169053d43d98dd08a3a87e3aa98 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_16085bc4660b43f1b53938ad82f6df1f);
+        
+    
+            var marker_57638473951245ab91680cd8f69393e8 = L.marker(
+                [37.553208412726455, -122.02699049892063],
+                {}
+            ).addTo(map_16085bc4660b43f1b53938ad82f6df1f);
+        
+    
+            var icon_9900aa08294b4dc8b9f484f64f13f79d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_57638473951245ab91680cd8f69393e8.setIcon(icon_9900aa08294b4dc8b9f484f64f13f79d);
+        
+    
+        var popup_afdc99086c454783b392de4d719e44b6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_92c58f5c561842a083e77b4f30d0f403 = $(`<div id="html_92c58f5c561842a083e77b4f30d0f403" style="width: 100.0%; height: 100.0%;">Home</div>`)[0];
+            popup_afdc99086c454783b392de4d719e44b6.setContent(html_92c58f5c561842a083e77b4f30d0f403);
+        
+
+        marker_57638473951245ab91680cd8f69393e8.bindPopup(popup_afdc99086c454783b392de4d719e44b6)
+        ;
+
+        
+    
+    
+            var marker_34889f33c4974c7fbbe7d5b4fa2639e0 = L.marker(
+                [37.55336735, -121.99381504909599],
+                {}
+            ).addTo(map_16085bc4660b43f1b53938ad82f6df1f);
+        
+    
+        var popup_0b912655f61c4ab0a216322731463a8d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e0dc32c8af3441cf9fb772d1eb0d8b98 = $(`<div id="html_e0dc32c8af3441cf9fb772d1eb0d8b98" style="width: 100.0%; height: 100.0%;">Washington High School March</div>`)[0];
+            popup_0b912655f61c4ab0a216322731463a8d.setContent(html_e0dc32c8af3441cf9fb772d1eb0d8b98);
+        
+
+        marker_34889f33c4974c7fbbe7d5b4fa2639e0.bindPopup(popup_0b912655f61c4ab0a216322731463a8d)
+        ;
+
+        
+    
+</script>

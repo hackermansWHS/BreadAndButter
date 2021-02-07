@@ -1,0 +1,185 @@
+{% extends "base_site.html" %}
+
+{% block title %} Profile {% endblock title %}
+
+{% block stylesheets %}
+  {{ super() }}
+{% endblock stylesheets %}
+
+{% block content %}
+
+    {% include "site_template/navigation.html" %}
+
+    <!-- Header -->
+    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url({{image_file}}); background-size: cover; background-position: center top;">
+    <!-- Mask -->
+    <span class="mask bg-gradient-default opacity-8"></span>
+    <!-- Header container -->
+    <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+        <div class="col-lg-7 col-md-10">
+            <h1 class="display-2 text-white">Hello {{ current_user.username }}</h1>
+            <p class="text-white mt-0 mb-5">
+                This is your profile page.
+            You can see local events and restaurants to visit</p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+
+        <div class="row">
+            <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+            <div class="card card-profile shadow">
+                <div class="row justify-content-center">
+                <div class="col-lg-3 order-lg-2">
+                    <div class="card-profile-image">
+                    <a href="#">
+                        <img src="{{image_file}}" class="rounded-circle">
+
+                    </a>
+                    </div>
+                </div>
+                </div>
+                <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+                <div class="d-flex justify-content-between">
+                </div>
+                </div>
+                <div class="card-body pt-0 pt-md-4">
+                <div class="row">
+                    <div class="col mt-6">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3>
+                    {{current_user.username}}<span class="font-weight-light"></span>
+                    </h3>
+                    <div class="h5 font-weight-300">
+                    <i class="ni location_pin mr-2"></i>{{current_user.userAddress}}
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-xl-8 order-xl-1">
+            <div class="card bg-secondary shadow">
+                <div class="card-header bg-white border-0">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                    <h3 class="mb-0">My account</h3>
+                    </div>
+                </div>
+                </div>
+                <div class="card-body">
+                <form method = "POST"action = "" enctype = "multipart/form-data">
+                    {{form_m.hidden_tag()}}
+                    <h6 class="heading-small text-muted mb-4">User information - {{ current_user.id }}</h6>
+                    <div class="pl-lg-4">
+                    <div class="row">
+                        <div class="col-lg-6">
+                        <div class="form-group">
+                            {{form.username.label(class = "form-control-label")}}
+
+                    {% if form.username.errors %}
+                        {{form.username(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.username.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.username(class = "form-control form-control-lg")}}
+                    {%endif%}
+
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="form-group">
+{{form.email.label(class = 'form-control-label')}}
+                    {% if form.email.errors %}
+                        {{form.email(class = "form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.email.errors%}
+                            <span>
+                                {{error}}
+                            </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.email(class = "form-control form-control-lg")}}
+                    {%endif%}
+                        </div>
+                        </div>
+                    </div>
+                        <div class="row">
+                        <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-address">Address</label>
+                            <input id="input-address" class="form-control form-control-alternative" placeholder = "{{current_user.userAddress}}"type="text">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                        <div class="form-group">
+                                                {{form.picture.label()}}
+                    {{form.picture(class = "form-control-file")}}
+                    {%if form.picture.errors%}
+                    {%for error in form.picture.errors%}
+                            <span class = "text-danger">
+                                {{error}}
+                            </span> </br>
+                            {%endfor%}
+                    {%endif%}
+                        </div>
+                        </div>
+                    </div>
+                        <div class="row">
+                        <div class="col-lg-6">
+                    <div class = "form-group">
+                    {{ form.submit(class = 'btn btn-outline-info') }}
+                </div>
+                        </div>
+                    </div>
+                    </div>
+                </form>
+
+
+                    <hr class="my-4" />
+                    {%if current_user.role == "user"%}
+                    <form method = 'POST' action = '' enctype = "multipart/form-data">
+            {{form_m.hidden_tag()}}
+            <div class = "row">
+                <div class = "form-group col-md-4">
+                    {{ form_m.restaurant(class = 'btn btn-primary') }}
+                </div>
+                <div class = "form-group col-md-4 ">
+                    {{ form_m.events(class = 'btn btn-primary') }}
+                </div>
+            </div>
+        </form>
+        {% endif %}
+        <iframe src = "{{url_for('loadMap', path=path)}}"  width = 600 height = 400></iframe>
+                </div>
+  </div>
+                    <!-- Address -->
+                    <div class="pl-lg-4">
+                    <!-- Description -->
+                </form>
+                </div>
+            </div>
+            </div>
+        </div>
+     </div>
+        {% include "site_template/footer.html" %}
+
+
+{% endblock content %}
+
+{% block javascripts %}
+  {{ super()}}
+{% endblock javascripts %}
